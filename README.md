@@ -9,7 +9,12 @@ This website is used offline, relies on IISExpress viewed on browser of choice p
 The website has features such as: <br />
 * Registration & Sign-in (without alert box) <br />
 * Purchasing items (without alert box) <br />
-* Posting & Viewing comments <br />
+* Posting & Viewing comments <br /><br/>
+
+![1 estore-main](https://user-images.githubusercontent.com/32786237/38714794-0195acee-3f2c-11e8-869e-58e02a2955d6.PNG)<br/>
+![2 estore-loggedin](https://user-images.githubusercontent.com/32786237/38714800-054f8f12-3f2c-11e8-99cc-17236fdfdb37.PNG)<br/>
+![3 estore-purchase](https://user-images.githubusercontent.com/32786237/38714803-08298bc0-3f2c-11e8-9c22-210b7305ffac.png)<br/>
+![4 estore-guestbook](https://user-images.githubusercontent.com/32786237/38714807-0a456fb4-3f2c-11e8-84f6-f84b73a333bc.PNG)<br/><br/>
 
 The website's security is vulnerable in ways that it is prone to HTML/SQL injection: <br />
 * XSS attacks <br />
