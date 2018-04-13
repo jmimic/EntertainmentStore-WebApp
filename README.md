@@ -1,7 +1,5 @@
-# Web-Development small projects
-Projects related to front-end, sometimes relying on back-end <br />
-
-## BoutiqueCasseeStore.rar
+# Entertainment Store
+## Boutique Cassee Store
 Offline Website (WCF Web service), single URL (using display: none/block) <br />
 Uses IISExpress(x64), SQLite Runtime dependencies, HTML, CSS, JS, small-size DB (passwords hashed) <br />
 Note: Store restricts access: Open-access (to public) and Closed-access (to registered) <br />
