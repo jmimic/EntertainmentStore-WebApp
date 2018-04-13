@@ -4,7 +4,7 @@ Offline Website (WCF Web service), single URL (using display: none/block) <br />
 Uses IISExpress(x64), SQLite Runtime dependencies, HTML, CSS, JS, small-size DB (passwords hashed) <br />
 Note: Store restricts access: Open-access (to public) and Closed-access (to registered) <br />
 This website is used offline, relies on IISExpress viewed on browser of choice pointing to localhost <br />
-* README.txt is included in the .rar file, follow to correctly get website up and running <br />
+* README.txt is included, follow to correctly get website up and running <br />
 
 The website has features such as: <br />
 * Registration & Sign-in (without alert box) <br />
