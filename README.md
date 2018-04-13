@@ -8,7 +8,7 @@ Note: Store restricts access: Open-access (to public) and Closed-access (to regi
 This website is used offline, relies on IISExpress viewed on browser of choice pointing to localhost <br />
 * README.txt is included, follow to correctly get website up and running <br />
 
-The website has features such as: <br />
+The website features: <br />
 * Registration & Sign-in (without alert box) <br />
 * Purchasing items (without alert box) <br />
 * Posting & Viewing comments <br /><br/>
