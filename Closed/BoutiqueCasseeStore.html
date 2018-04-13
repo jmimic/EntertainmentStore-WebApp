@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bienvenue &#224; la Boutique Cass&#233;e</title>
+   <link rel="stylesheet" type="text/css" href="BoutiqueCasseeStore.css"/>
+   <script src="BoutiqueCasseeStore.js"></script>
+   <link rel="shortcut icon" href="">
+</head>
+<body style="background-color:#99d6ff" 
+	onload="userLogOUTonload(); getBooks(); getBlurays(); getHTMLcomments(); getVersion(); showTabA();">
+	<!--Navigation Bar-->
+	<!-- Hover Dropdown  -->
+	<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_right -->
+	<div>
+		<div>
+			<!-- LOGO -->
+			<img id="logo" src="http://localhost:8188/Service.svc/logo"> 
+			<!-- MENU -->
+			<div style="margin-right:15%; margin-top:50px">
+				<div class="dropdown" style="float:right;">
+					<button class="dropbtn">Menu</button>
+					<div class="dropdown-content">
+						<a id="TabA" class="center" onclick="showTabA();">Home</a>
+						<a id="TabB" class="center" onclick="showTabB();">Blurays</a>
+						<a id="TabC" class="center" onclick="showTabC();">Books</a>
+						<a id="TabD" class="center" onclick="showTabD();">Guest Book</a>
+						<a id="TabE" class="center" onclick="showTabE();">Register</a>
+						<a id="TabF" class="center" onclick="showTabF();">Login</a>
+					</div>
+				</div>
+			</div>
+			<section id="WelcomeBack" style="float:right; margin-top: 130px; font-size:20px">
+			</section>
+			<section id="Logout" style="float:right; margin-top: 160px; margin-right:-185px; font-size:20px">
+			<button onclick="userLogOUT();">Sign Out</button>
+			</section>
+		</div>
+	</div>
+	<!--Actual Body -->
+	<!-- 01-CSS-HTML-Examples/CSS_hide+show/TabExample.html-->
+	<div id="SectionA"> <!-- Home -->
+      <section>
+         <div>
+			<p style="color:#99d6ff;"> . </p>
+			<h1 style="color:#1a1aff; font-size:35px; margin-top:130px; margin-right:15%; margin-left:15%;">Bienvenue &#224; la Boutique Cass&#233;e</h1>
+			<hr style="border-color:#1a1aff; margin-top:-20px; margin-left:15%; margin-right:15%;">
+			<div style="color:#1a1aff; margin-left:15%; margin-right:15%; font-size:18px;"> 
+				Welcome to New Zealand's Leading book and bluray store. We pride ourselves on providing the best bargains in the country.
+				<br><br>
+				Please feel free to check out what we have in store. You may even get more than what you bargained for.
+				<br><br>
+				<p id="showVersion"></p>
+			</div>
+         </div>		 
+		 <div id="LoginSec"> <!-- Login -->
+			<p style="color:#99d6ff;"> . </p>
+			<hr style="border-color:#1a1aff; margin-top:-20px; margin-left:15%; margin-right:15%; width:25%;">
+			<h1 style="margin-left:15%;"> Existing Customer? Login Here </h1>
+			<div style="margin-top:20px; margin-left:15%; margin-right:15%; border:10px double #4da6ff; width: 350px; ">
+				<input style="width:100%;" type = "text" id="loginUsernameHome" placeholder = "Username"><br>	
+				<input style="width:100%;" type = "text" id="loginPasswordHome" placeholder = "Password"><br>
+			</div>
+			<div style="margin-left:15%; margin-right:15%;"/>
+			<button style="margin-top:5px;" onclick="userLogINhome();">Login</button>
+			<p style="margin-top:5px;" id="showLoginStatusHome"></p>
+		</div>
+        <div> <!-- Register --> 
+            <p style="color:#99d6ff;"> . </p>
+			<hr style="border-color:#1a1aff; margin-top:-20px; margin-left:15%; margin-right:15%; width:25%;">
+			<h1 style="margin-left:15%;"> New to Boutique? Register Here </h1>
+			<div style="margin-top:20px; margin-left:15%; margin-right:15%; border:10px double #4da6ff; width: 350px; ">
+				<input style="width:100%;" type = "text" id="postUsername" placeholder = "Username"><br>	
+				<input style="width:100%;" type = "text" id="postPassword" placeholder = "Password"><br>	
+				<input style="width:100%;" type = "text" id="postAddress" placeholder = "Address"><br>
+			</div>
+			<div style="margin-left:15%; margin-right:15%;"/>
+			<button style="margin-top:5px;" onclick="postRegister();">Register</button>
+			<p style="margin-top:25px;" id="showName"></p>
+			<p style="margin-top:-15px;" id="showRegisteredStatus"></p>
+			<p style="margin-top:-15px;" id="showRegisteredDate"></p>
+		</div>
+      </section>
+   </div>
+   <div id="SectionB"> <!-- Bluray -->
+      <section>
+         <p>
+            <p style="color:#99d6ff;"> . </p>
+			<h1 style="color:#1a1aff; font-size:35px; margin-top:130px; margin-left:15%; margin-right:15%;">Blurays</h1>
+			<hr style="border-color:#1a1aff; margin-top:-20px; margin-left:15%; margin-right:15%;">
+			<input style="margin-left:65%; margin-right:35%;" type="text" id="searchBlurays" placeholder="Search blurays..." oninput="searchBlurays()">
+			<p id="searchedBlurays"></p>
+			<table style="margin-top: 0px; margin-left:15%; margin-right:15%; font-size:18px; color:#1a1aff;" id='show_blurays'; cellpadding='10';></table>
+         </p>
+      </section>
+   </div>
+   <div id="SectionC"> <!-- Books -->
+      <section>
+         <p>
+            <p style="color:#99d6ff;"> . </p>
+			<h1 style="color:#1a1aff; font-size:35px; margin-top:130px; margin-left:15%; margin-right:15%;">Books</h1>
+			<hr style="border-color:#1a1aff; margin-top:-20px; margin-left:15%; margin-right:15%;">
+			<input style="margin-left:65%; margin-right:35%;" type = "text" id = "searchBooks" placeholder = "Search books..."  oninput="searchBooks()">
+			<p id="searchedBooks"></p>
+			<table style="margin-top: 0px; margin-left:15%; margin-right:15%; font-size:18px; color:#1a1aff;" id='show_books'; cellpadding='10';></table>
+         </p>
+      </section>
+   </div>
+   <div id="SectionD"> <!--Guest Book -->
+      <section>
+         <p>
+            <p style="color:#99d6ff;"> . </p>
+			<h1 style="color:#1a1aff; font-size:35px; margin-top:130px; margin-left:15%; margin-right:15%;">Guest Book</h1>
+			<hr style="border-color:#1a1aff; margin-top:-20px; margin-left:15%; margin-right:15%;">
+			<div style="margin-top:20px; margin-left:15%; margin-right:15%;">
+				<input style="width:20%;" type = "text" id="postCommentName" placeholder = "Your Name"><br>	
+				<textarea rows="10" cols="45%" style="" id="postComment" placeholder="Post a Comment!"></textarea>
+			</div>
+			<div style="margin-left:15%; margin-right:15%;">
+				<button onclick="getHTMLcomments();">Refresh</button>
+				<button onclick="postHTMLcomment();" style="margin-left:20%">Post</button>
+				<h1 style="color:#1a1aff; font-size:25px;">Recent Entries</h1>
+				<p style="margin-top:-15px;" id="showDate"></p>
+				<p style="margin-top:25px;" id="showComments"></p>
+			</div>
+		 </p>
+      </section>
+   </div>
+   <div id="SectionE"> <!--  Register -->
+      <section>
+         <p>
+            <p style="color:#99d6ff;"> . </p>
+			<h1 style="color:#1a1aff; font-size:35px; margin-top:130px; margin-left:15%; margin-right:15%;">Register</h1>
+			<hr style="border-color:#1a1aff; margin-top:-20px; margin-left:15%; margin-right:15%;">
+			<div style="margin-top:20px; margin-left:15%; margin-right:15%;">
+				<input style="width:20%;" type = "text" id="postUsername" placeholder = "Username"><br>	
+				<input style="width:20%;" type = "text" id="postPassword" placeholder = "Password"><br>	
+				<input style="width:20%;" type = "text" id="postAddress" placeholder = "Address"><br>
+			</div>
+			<div style="margin-left:15%; margin-right:15%;">
+			<button onclick="postRegister();">Register</button>
+			<p style="margin-top:25px;" id="showName"></p>
+			<p style="margin-top:-15px;" id="showRegisteredStatus"></p>
+			<p style="margin-top:-15px;" id="showRegisteredDate"></p>
+			</div>
+         </p>
+      </section>
+   </div>
+   <div id="SectionF"> <!--  Login -->
+      <section>
+         <p>
+            <p style="color:#99d6ff;"> . </p>
+			<h1 style="color:#1a1aff; font-size:35px; margin-top:130px; margin-left:15%; margin-right:15%;">Login</h1>
+			<hr style="border-color:#1a1aff; margin-top:-20px; margin-left:15%; margin-right:15%;">
+			<div style="margin-top:20px; margin-left:15%; margin-right:15%; border:10px double #4da6ff; width: 350px; ">
+				<input style="width:100%;" type = "text" id="loginUsername" placeholder = "Username"><br>	
+				<input style="width:100%;" type = "text" id="loginPassword" placeholder = "Password"><br>
+			</div>
+			<div style="margin-left:15%; margin-right:15%;"/>
+			<button style="margin-top:5px;" onclick="userLogIN();">Login</button>
+			<p style="margin-top:5px;" id="showLoginStatus"></p>
+			</div>
+         </p>
+      </section>
+   </div>
+</body>
+</html> 
